@@ -22,16 +22,21 @@
 			height: 100px;
 			border: 1px solid #ddd;
 			clear: both;
+			display: none;
+		}
+		.cur{
+			background: yellow;
+			display: block;
 		}
 	</style>
 </head>
 <body>
 <ul id="header">
-	<li>1</li>
+	<li class="cur">1</li>
 	<li>2</li>
 	<li>3</li>
 </ul>
-	<div>1</div>
+	<div class="cur">1</div>
 	<div>2</div>
 	<div>3</div>
 </body>
@@ -40,8 +45,14 @@
 		var oLi=document.getElementsByTagName("li");
 		var oDiv=document.getElementsByTagName("div");
 		for(var i=0;i<oLi.length;i++){
+			oLi[i].index = i;
 			oLi[i].onclick=function(){
-			console.log(this);
+				for(var j=0;j<oDiv.length;j++){
+					oDiv[j].className="";
+					oLi[j].className = " ";
+				}
+				oDiv[this.index].className="cur";
+				oLi[this.index].className="cur";
 			}
 		}
 	}
