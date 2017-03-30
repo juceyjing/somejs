@@ -4,17 +4,46 @@
 	<title>选项卡</title>
 	<meta charset="utf-8">
 	<style type="text/css">
-		
+		*{
+			padding: 0;
+			margin: 0;	
+		}
+		#header{
+			list-style: none;
+		}
+		#header>li{
+			border: 1px solid #ddd;
+			width: 100px;
+			height: 50px;
+			float: left;
+		}
+		div{
+			width: 300px;
+			height: 100px;
+			border: 1px solid #ddd;
+			clear: both;
+		}
 	</style>
 </head>
 <body>
-<ul>
+<ul id="header">
 	<li>1</li>
 	<li>2</li>
 	<li>3</li>
 </ul>
-<div>1</div>
-<div>2</div>
-<div>3</div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
 </body>
+<script type="text/javascript">
+	window.onload=function(){
+		var oLi=document.getElementsByTagName("li");
+		var oDiv=document.getElementsByTagName("div");
+		for(var i=0;i<oLi.length;i++){
+			oLi[i].onclick=function(){
+			console.log(this);
+			}
+		}
+	}
+</script>
 </html>
