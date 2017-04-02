@@ -26,6 +26,7 @@ background-size: 0;
 
 懒加载
 先不进行加载，用户看到某一页时在进行加载，节约资源。
+原理：懒加载的基本思路就是不给img标签写src属性，而是写到一个后边可以操作的属性中，如data-src中，然后在后边需要加载的时候，加载图片，图片地址写到src中。
 <!DOCTYPE html>
 <html lang="en">
 <head>
