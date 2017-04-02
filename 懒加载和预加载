@@ -1,0 +1,62 @@
+懒加载和预加载
+预加载：
+当用户在进入首页的时候，先把图片进行加载，提高用户体验。
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preloadByCss</title>
+    <style type="text/css">
+        .preloadTest {
+width: 200px;
+height: 200px;
+border: 1px solid darkorange;
+background: url("http://localhost/Public/css/images/hover.jpg");
+background-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloadTest">
+
+    </div>
+</body>
+</html>
+
+懒加载
+先不进行加载，用户看到某一页时在进行加载，节约资源。
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lazyload Demo</title>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div class="img">
+    <img data-src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_81d09391.png" alt="logo"/>
+    <br/>
+    <button class="showImg">
+        点我显示图片
+    </button>
+
+    <script type="text/javascript">
+        $(".showImg").click(function() {
+            var show = $(".img > img");
+            show.attr("src", show.attr("data-src"));
+        });
+    </script>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
