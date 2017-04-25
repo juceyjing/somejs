@@ -25,9 +25,7 @@
         if (arrayEvent instanceof Array) {
             for (var i=0, length=arrayEvent.length; i<length; i+=1) {
                 if (typeof arrayEvent[i] === "function") {
-                    arrayEvent[i]({
-                        type: type    
-                    });    
+                    arrayEvent[i]();    
                 }
             }
         }    
@@ -87,6 +85,26 @@ document.onclick = function(e) {
         Event.fireEvent("alert");
     }
 };
+
+
+
+
+//关于数组中对象排序的解答
+var arr = [
+    {name:'zopp',age:0},
+    {name:'gpp',age:18},
+    {name:'yjj',age:8}
+];
+
+function compare(property){
+    return function(a,b){
+        var value1 = a[property];
+        var value2 = b[property];
+        return value1 - value2;
+    }
+}
+console.log(arr.sort(compare('age')))
+
 </script>
 
 </body>
