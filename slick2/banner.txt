@@ -1,0 +1,6 @@
+[
+	{"img":"1.png","desc":"2016全新javascript视频培训"},
+	{"img":"2.png","desc":"2016全新javascript视频培训"},
+	{"img":"3.png","desc":"2016全新javascript视频培训"},
+	{"img":"4.png","desc":"2016全新javascript视频培训"}
+]
